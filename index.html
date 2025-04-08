@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rubik's Cube</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="game-container">
+    <div class="scene">
+        <div class="cube-wrapper" id="cube-wrapper">
+            <div class="cube" id="cube"></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="button-row">
+            <button id="start-button">🟢 Spiel starten</button>
+            <button id="reset-button" style="display:none;">🔁 Reset</button>
+        </div>
+        <div class="seed-display">
+            <label for="seed-input">Seed:</label>
+            <input id="seed-input" type="text" placeholder="zufällig" />
+            <button id="copy-seed">📋</button>
+        </div>
+        <div class="hint-section">
+            <button id="hint-button">🧠 Hilfe anzeigen</button>
+        </div>
+
+        <h2>Layer Rotation</h2>
+        <div id="layer-buttons"></div>
+    </div>
+    <div class="log-container">
+        <h3>Zug-Log</h3>
+        <pre id="move-log"></pre>
+    </div>
+</div>
+<div id="stats" class="stats">
+    <span>Züge: <span id="move-count">0</span></span> |
+    <span>Zeit: <span id="timer">00:00</span></span>
+</div>
+
+<div id="win-popup" class="win-popup hidden">
+    <div class="win-content">
+        <h2>Cube gelöst!</h2>
+        <p>Zeit: <span id="win-time">--:--</span></p>
+        <p>Züge: <span id="win-moves">--</span></p>
+        <p>Seed: <span id="win-seed">--</span></p>
+        <button id="win-ok">OK</button>
+    </div>
+</div>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
